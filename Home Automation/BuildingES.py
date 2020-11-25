@@ -4,6 +4,7 @@
 import cv  #import the openCV lib to python
 import serial #import the pyserial module
 import getpass
+import sendSMS
 
 #Module -1: Image Processing
 hc = cv.Load(“/home/"+getpass.getuser()+"/haarcascade_frontalface_default.xml”)
@@ -31,5 +32,6 @@ else:
 	ser=serial.Serial(‘/dev/ttyUSB0’,9600)
 	print(ser)
 	ser.write(‘Y’)
+	sendSMS.sendSMS("Face Detected")
 
 
