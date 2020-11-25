@@ -11,7 +11,7 @@ sender = os.environ['TWILIO_SENDER']
 reciever = os.environ['TWILIO_RECIEVER']
 client = Client(account_sid, auth_token)
 
-def sendsms(smsbody,sender,reciever):
+def sendsms(smsbody):
     message = client.messages.create(
                               body=smsbody,
                               from_=sender,
